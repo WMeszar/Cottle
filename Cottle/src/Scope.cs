@@ -10,6 +10,8 @@ namespace   Cottle
     {
         #region Properties
 
+        public bool Dump { get; set; }
+
         public Value    this[Value name]
         {
             get

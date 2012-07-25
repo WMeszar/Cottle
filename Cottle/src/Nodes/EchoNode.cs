@@ -28,7 +28,12 @@ namespace   Cottle.Nodes
 
         public bool Apply (Scope scope, TextWriter output, out Value result)
         {
-            output.Write (this.expression.Evaluate (scope, output).AsString);
+            if (scope.Dump) {
+                output.Write(this.expression.Evaluate(scope, output).ToString());
+            } else {
+                output.Write(this.expression.Evaluate(scope, output).AsString);
+            }
+            
 
             result = UndefinedValue.Instance;
 
